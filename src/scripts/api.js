@@ -1,4 +1,4 @@
-const API_KEY = 'GU7PA4P2PVBLVNPZMQT8SGV3Q';
+const API_KEY = 'REPLACE WITH YOUR OWN';
 
 async function getWeatherData(location, startDate, endDate) {
   try {
