@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Weather App</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <main>
+      <div id="header-container">
+        <h1>
+          Weathering
+          <svg
+            viewBox="0 0 16 16"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#000000"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M8.64 1.668C6.482 1.67 4.648 2.999 3.772 4.9l-.061.13-.139.01C1.578 5.184 0 6.91 0 9.008 0 11.201 1.716 13 3.838 13h9.284C14.714 13 16 11.65 16 10.012a2.958 2.958 0 0 0-1.805-2.735l-.137-.058-.01-.149c-.135-2.993-2.487-5.4-5.404-5.402zm0 1c2.368.002 4.292 1.952 4.405 4.447v.01l.051.776.703.297a1.944 1.944 0 0 1 1.195 1.814c.01 1.114-.845 1.988-1.87 1.988H3.837C2.281 12 .999 10.68.999 9.008c0-1.597 1.185-2.866 2.645-2.973l.723-.05.31-.662v-.004c.728-1.58 2.213-2.65 3.961-2.65z"
+                fill="gray"
+                font-family="sans-serif"
+                font-weight="400"
+                overflow="visible"
+                style="
+                  line-height: normal;
+                  -inkscape-font-specification: sans-serif;
+                  text-indent: 0;
+                  text-align: start;
+                  text-decoration-line: none;
+                  text-transform: none;
+                  marker: none;
+                "
+                color="#000000"
+              ></path>
+            </g>
+          </svg>
+        </h1>
+        <form id="location-form">
+          <input
+            type="text"
+            id="location-input"
+            placeholder="Enter your city..."
+          />
+          <button type="submit" id="submit-button">Search</button>
+        </form>
+      </div>
+      <div id="information-container">
+        <section id="current-section">
+          <h2 id="location" class="bold"></h2>
+          <div id="temperature-container">
+            <p id="temperature" class="bold"></p>
+            <img src="#" alt="wi" id="weather-icon" />
+          </div>
+          <div id="other-information">
+            <p>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M7.40376 9.28272C4.99986 12.5 4.86535 15.9367 7.40376 18.4751C8.67299 19.7443 10.3365 20.3789 12.0001 20.3789C13.6636 20.3789 15.327 19.7443 16.5963 18.4751C19.1347 15.9367 19.0002 12.5 16.5963 9.28272C14.1924 6.06543 12.5046 3.85194 12 2.68652C11.4953 3.85194 9.80766 6.06543 7.40376 9.28272Z"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g>
+              </svg>
+              Humidity<span id="humidity" class="left bold"></span>
+            </p>
+            <p>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M3 8H5M7 5.85714V5.5C7 4.11929 8.11929 3 9.5 3C10.8807 3 12 4.11929 12 5.5C12 6.88071 10.8807 8 9.5 8H8"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  ></path>
+                  <path
+                    d="M4 14H5M15 17V17.5C15 19.433 16.567 21 18.5 21C20.433 21 22 19.433 22 17.5C22 15.567 20.433 14 18.5 14H9"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  ></path>
+                  <path
+                    d="M2 11H8M15 8V7.5C15 5.567 16.567 4 18.5 4C20.433 4 22 5.567 22 7.5C22 9.433 20.433 11 18.5 11H12.25"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  ></path>
+                </g>
+              </svg>
+              Wind<span id="windspeed" class="left bold"></span>
+            </p>
+            <hr />
+            <p class="bold">
+              <svg
+                viewBox="0 0 24.00 24.00"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M12 10V3M12 3L9 6M12 3L15 6M6 12L5 11M18 12L19 11M3 18H21M5 21H19M7 18C7 15.2386 9.23858 13 12 13C14.7614 13 17 15.2386 17 18"
+                    stroke="#59778b"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g>
+              </svg>
+              <span id="sunrise"></span><span id="sunset" class="left"></span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M6 12L5 11M18 12L19 11M3 18H21M5 21H19M7 18C7 15.2386 9.23858 13 12 13C14.7614 13 17 15.2386 17 18M12 3V10M12 10L15 7M12 10L9 7"
+                    stroke="#59778b"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g>
+              </svg>
+            </p>
+          </div>
+        </section>
+
+        <p class="bold label">HOURLY FORECAST</p>
+        <section id="hourly-section"></section>
+
+        <p class="bold label">WEEKLY FORECAST</p>
+        <section id="weekly-section"></section>
+      </div>
+    </main>
+  </body>
+</html>
